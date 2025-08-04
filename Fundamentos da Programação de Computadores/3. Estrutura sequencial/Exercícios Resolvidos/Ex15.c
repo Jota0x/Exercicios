@@ -10,6 +10,19 @@
 
 int main()
 {
+    float preco, percentLucro, percentImposto, lucroEmpresa, imposto, precoFinal;
 
+    // le preço percentual de lucro e percentual de imposto sobre o carro
+    scanf("%f %f %f", &preco, &percentLucro, &percentImposto);
 
-}// end main
+    imposto = preco * (percentImposto / 100);
+
+    lucroEmpresa = lucroEmpresa = preco * (percentLucro / 100.0);
+
+    precoFinal = preco + lucroEmpresa + imposto;
+
+    printf("Lucro: %.2f imposto: %.2f preco final: %.2f", lucroEmpresa, imposto, precoFinal);
+
+    return 0;
+
+} // end main
