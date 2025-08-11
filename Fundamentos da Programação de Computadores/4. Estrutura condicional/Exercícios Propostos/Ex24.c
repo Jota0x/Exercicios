@@ -13,40 +13,90 @@
 #include <stdlib.h>
 
 int main()
-{   
+{
+    float preco, aumento, novoPreco, imposto;
     int categoria;
+    char situacao;
 
-    //Menu
-    printf("1 - limpeza");
-    printf("2 - alimentacao");
-    printf("3 - vestuario");
-    
+    // Menu
+    printf("1 - limpeza\n");
+    printf("2 - alimentacao\n");
+    printf("3 - vestuario\n");
+
+    printf("Categoria\n");
+    scanf("%d",&categoria);
+
+    printf("Preco: ");
+    scanf("%f",&preco);
+
     switch (categoria)
     {
     case 1:
-        
+        // analise preço
+        if (preco <= 25)
+        {
+            aumento = preco * 0.05f;
+        } // end if
+        else
+            aumento = preco * 0.12f;
+
+        imposto = preco * 0.05f;
+
+        novoPreco = preco + aumento - imposto;
+
         break;
     case 2:
-        char situacao;
+        
+        scanf(" %c", &situacao);
 
-        scanf(" %c",&situacao);
-
-        if(situacao == 'R')
+        // analise do preço
+        if (preco <= 25)
         {
-            
-        }
+            aumento = preco * 0.08f;
+        } // end if
+        else
+            aumento = preco * 0.15f;
 
+        // analise da situação
+        if (situacao == 'R')
+        {
+            imposto = preco * 0.08f;
+        } // end if
+        else
+            imposto = preco * 0.05f;
 
-    break;
+        novoPreco = preco + aumento - imposto;
+
+        break;
 
     case 3:
 
-    break;
+        // analise do preço
+        if (preco <= 25)
+        {
+            aumento = preco * 0.10f;
+        } // end if
+        else
+            aumento = preco * 0.18f;
+
+        novoPreco = preco + aumento - imposto;
+
+        break;
     default:
+        printf("Opcao invalida!");
         break;
     }
 
-
+    if(novoPreco <= 50)
+    {
+        printf("Barato");
+    }// end if 
+    else if(novoPreco > 50 && novoPreco <= 120)
+    {
+        printf("Normal");
+    } // end else if 
+    else 
+        printf("Caro");
 
     return 0;
-}// end main
+} // end main
