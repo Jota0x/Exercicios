@@ -14,6 +14,7 @@
 int main()
 {
     int opcao;
+    float salario, imposto, novoSalario, aumento;
 
     // menu
     do
@@ -24,24 +25,67 @@ int main()
         printf("\n 3 - Classificao");
         printf("\n 0 - Sair do programa");
         printf("\n Opcao: ");
-        scanf("%d",&opcao);
+        scanf("%d", &opcao);
 
         switch (opcao)
         {
         case 1:
-            
+
+            scanf("%f", &salario);
+
+            if (salario < 500)
+            {
+                imposto = salario * 0.05f;
+            }
+            else if (salario >= 500 && salario <= 850)
+            {
+                imposto = salario * 0.10f;
+            }
+            else
+                imposto = salario * 0.15f;
+
+            printf("%f", imposto);
             break;
-        
+
+        case 2:
+            scanf("%f", salario);
+
+            if (salario > 1500)
+            {
+                aumento = 25;
+            }
+            else if (salario >= 750 && salario <= 1500)
+            {
+                aumento = 50;
+            }
+            else if (salario >= 450 && salario <= 750)
+            {
+                aumento = 75;
+            }
+            else
+                aumento = 100;
+
+            novoSalario = salario + aumento;
+
+            printf("%f", novoSalario);
+            break;
+
+        case 3:
+            scanf("%f", &salario);
+
+            if (salario <= 750)
+            {
+                printf("Mal remunerado");
+            }
+            else
+                printf("Bem remunerado");
+            break;
+
         default:
+            printf("Opcao invalida!");
             break;
         }
 
-
     } while (opcao != 0);
 
-
-
-
-
-
-}// end main
+} // end main
