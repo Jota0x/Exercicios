@@ -21,7 +21,7 @@ int main()
     scanf("%d", &codigo);
 
     // verifica a validade do codigo
-    if (codigo < 1 && codigo > 10)
+    if (codigo < 1 || codigo > 10)
     {
         printf("Erro no codigo!");
         return 1;
@@ -30,7 +30,7 @@ int main()
     scanf("%f%d", &peso, &codigoPais);
 
     // verifica a validade do codigo do pais
-    if (codigoPais < 1 && codigoPais > 3)
+    if (codigoPais < 1 || codigoPais > 3)
     {
         printf("Erro no codigo!");
         return 1;
