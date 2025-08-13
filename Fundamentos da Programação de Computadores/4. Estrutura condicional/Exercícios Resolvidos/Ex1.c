@@ -12,6 +12,8 @@ int main()
 
     mediaPonderada = ((nota1 * 2) + (nota2 * 3) + (nota3 * 5)) / 10;
 
+    printf("Media: %f\n",mediaPonderada);
+
     if (mediaPonderada >= 8)
     {
         printf("Conceito: A");

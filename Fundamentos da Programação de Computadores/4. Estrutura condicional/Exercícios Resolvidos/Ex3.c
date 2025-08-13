@@ -11,7 +11,6 @@ int main()
     if (x > y)
     {
         maior = x;
-        printf("%d", maior);
     }
     else if (x == y)
     {
@@ -20,8 +19,9 @@ int main()
     else
     {
         maior = y;
-        printf("%d", maior);
     }
+
+    printf("d", maior);
 
     return 0;
 } // end main
