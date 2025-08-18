@@ -11,13 +11,19 @@
 
 int main()
 {
-    int n;
+    int n,contador = 1;
 
     scanf("%d", &n);
 
+    //controle do numero de linhas 
     for (int i = 0; i < n; i++)
     {
-        printf("%d\n", i);
+        for(int j = 0; j < i;j++)
+        {
+            printf("%d ",contador);
+            contador++;
+        }// end main
+        printf("\n");
     } // end main
 
 } // end main
