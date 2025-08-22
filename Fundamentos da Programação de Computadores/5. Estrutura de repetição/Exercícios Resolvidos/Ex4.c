@@ -11,7 +11,7 @@
 
 int main()
 {
-    int x;
+    int codigoCidade,numeroVeiculo,numeroAcidente;
 
     return 0;
 }// end main

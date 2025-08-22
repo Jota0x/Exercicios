@@ -57,6 +57,7 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
-    "eX8.C": "cpp"
+    "eX8.C": "cpp",
+    "stdlib.h": "c"
   }
 }
