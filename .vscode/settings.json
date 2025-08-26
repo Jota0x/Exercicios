@@ -58,6 +58,7 @@
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
     "eX8.C": "cpp",
-    "stdlib.h": "c"
+    "stdlib.h": "c",
+    "cmath": "c"
   }
 }
