@@ -34,4 +34,4 @@ double fatorial(int N)
     }
     else
         return N * fatorial(N - 1);
-}
+}// fatorial

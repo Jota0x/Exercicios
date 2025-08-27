@@ -12,10 +12,7 @@ int main()
     // le N
     scanf("%d", &N);
 
-    for (int i = 1; i <= N; i++)
-    {
-        printf(" | Numero Lido: %d Fatorial: %.2lf | ", i, fatorial(i));
-    } // end for
+    printf(" | Numero Lido: %d Fatorial: %.2lf | ", N, fatorial(N));
 
     return 0;
 } // end main
@@ -25,8 +22,10 @@ double fatorial(int N)
 {
     if (N == 1)
     {
+        // caso base
         return 1;
     }
     else
+        // metodo recursivo
         return N * fatorial(N - 1);
 }
