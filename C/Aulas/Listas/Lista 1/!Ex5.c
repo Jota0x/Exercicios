@@ -24,7 +24,7 @@ int main()
     printf("Valor promocinal: %.2f\n", diariaPromocao);
     printf("Promocional com 80%% ocupado: %.2f\n", valorTotal80);
     printf("Normal com 50%% ocupado: %.2f\n", valorTotal50);
-    printf("Diferenca entre os valores: %.2f", diferenca);
+    printf("Diferença entre os valores: %.2f", diferenca);
 
     return 0;
 } // end main
