@@ -15,7 +15,9 @@
 int mian()
 {
     char sexo, experiencia;
-    int idade, qtMasculino, qtFeminino,qtInferior21 = 0;
-    float mediaHomens = 0, pecentHomens = 0
+    int idade, qtMasculino, qtFeminino, qtInferior21 = 0;
+    float mediaHomens = 0, pecentHomens = 0;
+
+    return 0;
 
 } // end main
