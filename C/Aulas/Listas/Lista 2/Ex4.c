@@ -5,34 +5,30 @@ double fatorial(int n);
 
 int main()
 {
-    double E = 0;
+    double E = 1;
     int N;
 
     // le N
     scanf("%d", &N);
 
     // loop principal
-    for (int i = 0; i <= N; i++)
+    for (int i = 1; i <= N; i++)
     { // chama a função recursiva de fatorial para calculo
-        E += 1.0 / fatorial(i);
+        E += 1.0f / fatorial(i);
     } // end for
 
+    //imprime E
     printf("%.2lf", E);
 
     return 0;
 } // end main
 
+//fatorial recursiva 
 double fatorial(int N)
 {
-    int fat = 1;
-
-    // loop principal
-    for (int i = N; i <= 1; i--)
-    {
-        //calculo fat 
-        fat *= N;
-    } // end for
-
-    return fat;
+    if (N == 1)
+        return 1;
+    else
+        return N * fatorial(N - 1);
 
 } // fatorial
