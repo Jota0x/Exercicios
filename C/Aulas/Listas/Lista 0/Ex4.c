@@ -6,7 +6,7 @@
 int main()
 {
     // configura o idioma
-    setlocale(LC_ALL, "pt_BR.UTF-8");
+    // setlocale(LC_ALL, "pt_BR.UTF-8");
 
     // declarção das variaveis
     float raio, area, perimetro;
@@ -20,8 +20,8 @@ int main()
     // calculo do perimetro
     perimetro = 2 * PI * raio;
 
-    printf("Perímetro: %.2f\n", perimetro);
-    printf("Área: %.2f", area);
+    printf("Perimetro: %.2f\n", perimetro);
+    printf("Area: %.2f", area);
 
     return 0;
 } // end main

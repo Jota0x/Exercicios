@@ -1,30 +1,28 @@
 #include <stdio.h>
-#include <locale.h>
 
 int main()
 {
-    // configura o idioma
-    setlocale(LC_ALL, "pt_BR.UTF-8");
+    // variavies
+    float diaria, diariaComum = 0, diariaPromocao = 0, totalPromocao = 0;
+    float diferenca = 0;
 
-    // declaração variavel
-    float valorDiaria, diariaPromocao, valorTotal80, valorTotal50, diferenca;
+    // le diaria
+    scanf("%f", &diaria);
 
-    // le valor da diaria
-    scanf("%f", &valorDiaria);
+    //calculo das diarias
+    diariaPromocao = diaria * 0.75f;
 
-    // desconto de 25%
-    diariaPromocao = valorDiaria - (valorDiaria * 0.25f);
+    totalPromocao = diariaPromocao * (80 * 0.80f);
 
-    valorTotal50 = valorDiaria * (80 * 0.50f);
+    diariaComum = diaria * (80 * 0.50f);
 
-    valorTotal80 = diariaPromocao * (80 * 0.80f);
+    diferenca = totalPromocao - diariaComum;
 
-    diferenca = valorTotal80 - valorTotal50;
-
-    printf("Valor promocinal: %.2f\n", diariaPromocao);
-    printf("Promocional com 80%% ocupado: %.2f\n", valorTotal80);
-    printf("Normal com 50%% ocupado: %.2f\n", valorTotal50);
-    printf("Diferença entre os valores: %.2f", diferenca);
+    //imprime valores
+    printf("Valor promocional: %.2f", diariaPromocao);
+    printf("\nPromocional com 80%% ocupado: %.2f", totalPromocao);
+    printf("\nNormal com 50%% ocupado: %.2f", diariaComum);
+    printf("\nDiferenca entre os valores: %.2f", diferenca);
 
     return 0;
 } // end main

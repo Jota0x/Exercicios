@@ -6,7 +6,7 @@
 int main()
 {
     // configura o idioma 
-    setlocale(LC_ALL, "pt_BR.UTF-8");
+   // setlocale(LC_ALL, "pt_BR.UTF-8");
 
     // decalração das variaveis
     float base, altura, perimetro, area, diagonal;
@@ -23,8 +23,8 @@ int main()
     // calculo da diagonal
     diagonal = sqrt((base * base) + (altura * altura));
 
-    printf("Perímetro: %.2f\n", perimetro);
-    printf("Área: %.2f\n",area);
+    printf("Perimetro: %.2f\n", perimetro);
+    printf("Area: %.2f\n",area);
     printf("Diagonal: %.2f",diagonal);
 
     return 0;
