@@ -43,7 +43,7 @@ void verificaTriangulo(float a, float b, float c)
         } // end if
         else if (a != b && a != c && b != c)
         {
-            printf("TRINAGULO ESCALENO\n");
+            printf("TRIANGULO ESQUALENO\n");
         } // end else if
         else
             printf("TRIANGULO ISOSCELES\n");
