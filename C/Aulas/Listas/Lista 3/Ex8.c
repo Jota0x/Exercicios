@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // prototipo função
-float s(int n);
+double s(int n);
 
 int main()
 {
@@ -10,25 +10,22 @@ int main()
     // le numero de vezes
     scanf("%d", &n);
 
-    printf("%f", s(n));
+    printf("%lf", s(n));
 
 } // end main
 
-float s(int n)
+double s(int n)
 {
-    float S = 0;
-    float numerador = 2.0f, denominador = 4.0f, indice = 3;
+    double S = 0.0; 
 
-    // loop principal
-    // calculo de S
-    for (int i = 0; i < n; i++)
+    // O loop deve ir de 1 a n
+    for (int i = 1; i <= n; i++)
     {
-        S += numerador / denominador;
+        double numerador = (double)i * i + 1;
+        double denominador = (double)i + 3;
 
-        numerador += indice;
-        denominador++;
-        indice += 2;
-    } // end for
+        S += numerador / denominador;
+    }
 
     return S;
 } // end s

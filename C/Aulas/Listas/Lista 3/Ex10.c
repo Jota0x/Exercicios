@@ -24,7 +24,7 @@ int main()
 void categoriaNadador(int n)
 {
     // trata categoria
-    if (n >= 56 && n <= 7)
+    if (n >= 5 && n <= 7)
     {
         printf("F\n");
     } // end if
