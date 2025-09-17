@@ -17,8 +17,8 @@ int main()
 // teoremaEuclides
 int teoremaEuclides(int x, int y)
 {
-    if (x == 0)
-        return y;
+    if (y == 0)
+        return x;
     else
         return teoremaEuclides(y, x % y);
 } // end teoremaEuclideds

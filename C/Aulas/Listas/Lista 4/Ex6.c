@@ -9,7 +9,14 @@ int main()
     // le numero
     scanf("%d", &n);
 
-    printf("%d", contarAlgarismo(n, aux));
+    if (n == 0)
+    {
+        printf("1");
+    }
+    else
+    {
+        printf("%d", contarAlgarismo(n, aux));
+    }
 
     return 0;
 } // end main
