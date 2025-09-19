@@ -1,32 +1,24 @@
 #include <stdio.h>
 
-int contarAlgarismo(int n, int aux);
+int contarAlgarismo(int n);
 
 int main()
 {
-    int n, aux = 0;
+    int n;
 
     // le numero
     scanf("%d", &n);
 
-    if (n == 0)
-    {
-        printf("1");
-    }
-    else
-    {
-        printf("%d", contarAlgarismo(n, aux));
-    }
+    printf("%d", contarAlgarismo(n));
 
     return 0;
 } // end main
 
-int contarAlgarismo(int n, int aux)
+int contarAlgarismo(int n)
 {
     if (n == 0)
-        return aux;
+        return 0;
     else
-        aux++;
-    return contarAlgarismo(n / 10, aux);
+        return 1 + contarAlgarismo(n / 10);
 
 } // end contarNumero
