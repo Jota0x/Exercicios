@@ -1,24 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int contarAlgarismo(int n);
+int contarDigitos(long n);
 
 int main()
 {
-    int n;
-
-    // le numero
-    scanf("%d", &n);
-
-    printf("%d", contarAlgarismo(n));
-
+    long num;
+    scanf("%ld", &num);
+    printf("%d\n", contarDigitos(num));
     return 0;
-} // end main
+}
 
-int contarAlgarismo(int n)
+int contarDigitos(long n)
 {
-    if (n == 0)
-        return 0;
-    else
-        return 1 + contarAlgarismo(n / 10);
-
-} // end contarNumero
+    n = labs(n); // garante positivo
+    if (n < 10)
+        return 1;                     // caso base
+    return 1 + contarDigitos(n / 10); // chamada recursiva
+}
