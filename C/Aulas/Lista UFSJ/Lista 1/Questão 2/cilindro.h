@@ -3,7 +3,11 @@
 
 typedef struct
 {
+    float raio;
+    float altura;
+} Cilindro;
 
-}Cilidro;
+Cilindro cilindro;
 
-Cilidro cilindro;
+float area(Cilindro *cilindro);
+float volume(Cilindro *cilindro);
