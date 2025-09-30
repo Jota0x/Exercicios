@@ -23,7 +23,6 @@ int main()
     ptrFLOAT = &varFLOAT;
     ptrDOUBLE = &varDOUBLE;
 
-
     printf("--- Analise de Tipos Primitivos ---\n");
 
     // CHAR
@@ -50,29 +49,28 @@ int main()
     printf("  Endereco: %p\n", &varDOUBLE);
     printf("  Tamanho (bytes): %zu\n", sizeof(varDOUBLE));
 
-
     printf("\n--- Analise de Tipos Ponteiros (*ptr) ---\n");
 
-    // INT * (Ponteiro para INT)
+    // INT * 
     printf("\nTipo: int * (Ponteiro para int)\n");
     // O valor do ponteiro e o endereco que ele armazena.
     printf("  Valor (Endereco Apontado): %p\n", ptrINT);
     printf("  Endereco do Ponteiro: %p\n", &ptrINT);
     printf("  Tamanho (bytes): %zu\n", sizeof(ptrINT));
 
-    // CHAR * (Ponteiro para CHAR)
+    // CHAR * 
     printf("\nTipo: char * (Ponteiro para char)\n");
     printf("  Valor (Endereco Apontado): %p\n", ptrCHAR);
     printf("  Endereco do Ponteiro: %p\n", &ptrCHAR);
     printf("  Tamanho (bytes): %zu\n", sizeof(ptrCHAR));
 
-    // FLOAT * (Ponteiro para FLOAT)
+    // FLOAT * 
     printf("\nTipo: float * (Ponteiro para float)\n");
     printf("  Valor (Endereco Apontado): %p\n", varFLOAT);
     printf("  Endereco do Ponteiro: %p\n", &varFLOAT);
     printf("  Tamanho (bytes): %zu\n", sizeof(varFLOAT));
 
-    // DOUBLE * (Ponteiro para DOUBLE)
+    // DOUBLE * 
     printf("\nTipo: double * (Ponteiro para double)\n");
     printf("  Valor (Endereco Apontado): %p\n", ptrDOUBLE);
     printf("  Endereco do Ponteiro: %p\n", &ptrDOUBLE);
