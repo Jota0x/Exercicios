@@ -13,16 +13,22 @@ int main()
     char *ptrLetra = &letra;
 
     // imprime antes da mudança
-    printf("\nInt: %d", inteiro);
-    printf("\nFloat: %f", real);
-    printf("\nChar: %c\n", letra);
+    printf("\nInt: %d", *ptrInteiro);
+    printf("\nEndereco: %p", &ptrInteiro);
+    printf("\nFloat: %f", *ptrReal);
+    printf("\nEndereco: %p", &ptrReal);
+    printf("\nChar: %c\n", *ptrLetra);
+    printf("\nChar: %p\n", &ptrLetra);
 
     scanf(" %c%d%f", ptrLetra, ptrInteiro, ptrReal);
 
     // imprime depois da mudança
     printf("\nInt: %d", *ptrInteiro);
+    printf("\nEndereco: %p", &ptrInteiro);
     printf("\nFloat: %f", *ptrReal);
-    printf("\nChar: %c", *ptrLetra);
+    printf("\nEndereco: %p", &ptrReal);
+    printf("\nChar: %c\n", *ptrLetra);
+    printf("\nChar: %p\n", &ptrLetra);
 
     return 0;
 } // end main
