@@ -10,8 +10,7 @@ int main()
     float varFLOAT = 3.14f;
     double varDOUBLE = 123.456789;
 
-    // Tipos Ponteiros (Ponteiros para Tipos Primitivos)
-    // Eles armazenam enderecos de memoria.
+    // Tipos Ponteiros
     int *ptrINT;       // Ponteiro para INT
     char *ptrCHAR;     // Ponteiro para CHAR
     float *ptrFLOAT;   // Ponteiro para FLOAT
