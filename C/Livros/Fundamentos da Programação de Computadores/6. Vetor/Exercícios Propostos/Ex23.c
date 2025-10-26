@@ -8,17 +8,22 @@ de todas as subtrações realizadas.
 
 int main()
 {
-    int A[5], B[5];
+    int A[5], B[5], resultante;
 
     for (int i = 0; i < 5; i++)
         scanf("%d%d", &A[i], &B[i]);
 
-    //variavle de controle do vetor B
-    int aux = 5;
-    for(int i = 0; i < 5;i++)
+    // variavle de controle do vetor B
+    int aux = 4;
+    for (int i = 0; i < 5; i++)
     {
-       // printf("Subtrcao: %d",);
+
+        resultante += A[i] - B[aux];
+
+        aux--;
     }
+
+    printf("%d ", resultante);
 
     return 0;
 } // end main
