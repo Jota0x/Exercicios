@@ -17,7 +17,7 @@ int main()
     int aux = 5;
     for(int i = 0; i < 5;i++)
     {
-        printf("Subtrcao: %d",)
+       // printf("Subtrcao: %d",);
     }
 
     return 0;
