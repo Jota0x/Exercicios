@@ -21,8 +21,16 @@ int main()
     int aux = 0;
     for (int i = 0; i < 4; i++)
     {
-        printf("%d", M[i][aux] + N[aux][i]);
-        aux++;
+        int somaLinha = 0;
+        int somaColuna = 0;
+
+        for (int j = 0; j < 6; j++)
+            somaLinha += M[i][j];
+
+        for (int k = 0; k < 6; k++)
+            somaColuna += N[k][i];
+
+        printf("%d", somaColuna + somaLinha);
     }
 
     return 0;
