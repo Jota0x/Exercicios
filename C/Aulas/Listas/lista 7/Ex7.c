@@ -12,9 +12,9 @@ int main()
 
     leA(A);
     leB(B);
-    printf("%d ", soma);
+    soma(A, B);
     printf("\n");
-    printf("%d ", subtracao);
+    subtracao(A, B);
 
     return 0;
 } // end main
