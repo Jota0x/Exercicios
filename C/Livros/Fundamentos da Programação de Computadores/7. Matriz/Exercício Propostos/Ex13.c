@@ -8,8 +8,15 @@ verá ser multiplicada pelo maior elemento da linha em questão; mostre a matriz
 
 int main()
 {
+    int matriz[6][4];
+
+    for (int i = 0; i < 6; i++)
+        for (int j = 0; j < 4; j++)
+            scanf("%d", &matriz[i][j]);
+
+    
 
 
 
     return 0;
-}//end main
+} // end main
