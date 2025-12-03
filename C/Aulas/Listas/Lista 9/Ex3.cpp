@@ -6,84 +6,58 @@ class Carro
 private:
     int capacidade;
     int consumo;
-    int quantidadeAtual;
-    int distanciaPercorrida;
+    int atual;
+    int distancia;
 
 public:
-    Carro()
-    {
-        this->distanciaPercorrida = 0;
-        this->quantidadeAtual = 0;
-        this->capacidade = 0;
-        this->consumo = 0;
-    }
+    Carro() {};
+    Carro(int capacidade, int consumo, int atual, int distancia)
+        : capacidade(capacidade), consumo(consumo), atual(atual), distancia(distancia) {}
 
-    // setters
-    void setCapacidade(int capacidade) { this->capacidade = capacidade; }
-    void setConsumo(int consumo) { this->consumo = consumo; }
-    void setQuantidadeAtual(int quantidadeAtual) { this->quantidadeAtual = quantidadeAtual; }
-    void setDistanciaPercorrida(int distanciaPercorrida) { this->distanciaPercorrida = distanciaPercorrida; }
+    // set
+    void setCarro(int capacidade, int consumo, int atual, int distancia)
+    {
+        this->capacidade = capacidade;
+        this->consumo = consumo;
+        this->atual = atual;
+        this->distancia = distancia;
+    }
 
     // getters
-    int getCapacidade() { return capacidade; }
-    int getConsumo() { return consumo; }
-    int getQuantidadeAtual() { return quantidadeAtual; }
-    int getDistanciaPercorrida() { return distanciaPercorrida; }
+    int getCapacidade() { return this->capacidade; }
+    int getConsumo() { return this->consumo; }
+    int getAtual() { return this->atual; }
+    int getDistancia() { return this->distancia; }
 
-    // outros métodos
-    void abastecer(int quantidadeAbastecida)
+    // outros metodos
+    void abastecer(int combustivel)
     {
-        quantidadeAtual += quantidadeAbastecida;
-        if (quantidadeAtual > capacidade)
-            quantidadeAtual = capacidade;
+        atual += combustivel;
     }
 
-    void moverCarro(int distancia)
+    int retante(int atual)
     {
-        int distanciaPossivel = quantidadeAtual * consumo;
-
-        int distanciaReal = 0;
-
-        if (distancia <= distanciaPossivel)
-            distanciaReal = distancia;
-        else
-            distanciaReal = distanciaPossivel;
-
-        int combustivelGasto = distanciaReal / consumo;
-
-        distanciaPercorrida += distanciaReal;
-        quantidadeAtual -= combustivelGasto;
+        atual = atual
     }
+
 };
 
 int main()
 {
-    int dist1, dist2;
-    int comb1, comb2;
+    Carro c1(50, 15, 0, 0);
+    Carro c2(50, 15, 0, 0);
+
+    int comb1, comb2, d1, d2;
 
     cin >> comb1;
     cin >> comb2;
-    cin >> dist1;
-    cin >> dist2;
 
-    Carro c1;
-    Carro c2;
+    cin >> d1;
+    cin >> d2;
 
-    c1.setConsumo(15);
-    c1.setCapacidade(50);
-    c2.setConsumo(15);
-    c2.setCapacidade(50);
+    c1.setCarro(50, 15, comb1, d1);
+    c1.setCarro(50, 15, comb2, d2);
 
-    c1.abastecer(comb1);
-    c2.abastecer(comb2);
 
-    c1.moverCarro(dist1);
-    c2.moverCarro(dist2);
 
-    cout << "Carro 1 - Distancia total: " << c1.getDistanciaPercorrida() << " km" << endl;
-    cout << "Carro 1 - Combustivel restante: " << c1.getQuantidadeAtual() << " litros" << endl;
-    cout << "Carro 2 - Distancia total: " << c2.getDistanciaPercorrida() << " km" << endl;
-    cout << "Carro 2 - Combustivel restante: " << c2.getQuantidadeAtual() << " litros" << endl;
-
-    return 0;
 } // end main

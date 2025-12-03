@@ -9,6 +9,7 @@ private:
     float altura;
 
 public:
+    // construtor padrao
     Pessoa() {};
 
     // setters
@@ -17,28 +18,32 @@ public:
     void setAltura(float altura) { this->altura = altura; }
 
     // getters
-    string getNome() { return nome; }
-    int getIdade() { return idade; }
-    float getAltura() { return altura; }
+    string getNome() { return this->nome; }
+    int getIdade() { return this->idade; }
+    float getAltura() { return this->altura; }
 };
 
 int main()
 {
-    int n;
-    string nome;
-    int idade;
-    float altura;
+    int N;
 
-    cin >> n;
+    // le quantidade de pessoas
+    cin >> N;
+
+    Pessoa pessoa[N];
+    int idade;
+    string nome;
+    float altura;
 
     cin.ignore();
 
-    Pessoa pessoa[n];
-
-    // le dados pessoa
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < N; i++)
     {
+
+        // le dados de pessoa
         getline(cin, nome);
+        cin.ignore();
+
         cin >> idade;
         cin >> altura;
 
@@ -47,12 +52,14 @@ int main()
         pessoa[i].setAltura(altura);
     }
 
-    // imprime dados pessoa
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < N; i++)
     {
-
-        cout << "Nome:" << pessoa[i].getNome() << endl;
-        cout << "Idade:" << pessoa[i].getIdade() << endl;
-        cout << "Altura: " << pessoa[i].getAltura() << endl;
+        cout << "Dados da pessoa: \n";
+        cout << "Nome: " << pessoa[i].getNome() << "\n";
+        cout << "Idade: " << pessoa[i].getIdade() << "\n";
+        cout << "Altura: " << pessoa[i].getAltura() << "\n";
     }
-}
+
+    return 0;
+
+} // end main

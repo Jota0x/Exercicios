@@ -4,67 +4,77 @@ using namespace std;
 class Relogio
 {
 private:
-    int horas;
-    int minutos;
     int segundos;
+    int minutos;
+    int horas;
 
 public:
-    Relogio() {}
-
     // setters
-    void setHoras(int horas) { this->horas = horas; }
-    void setMinutos(int minutos) { this->minutos = minutos; }
     void setSegundos(int segundos) { this->segundos = segundos; }
+    void setMinutos(int minutos) { this->minutos = minutos; }
+    void setHoras(int horas) { this->horas = horas; }
 
     // getters
-    int getHoras() { return horas; }
-    int getMinutos() { return minutos; }
-    int setsegundos() { return segundos; }
+    int getSegundos() { return this->segundos; }
+    int getMinutos() { return this->minutos; }
+    int getHoras() { return this->horas; }
 
-    // outros metodos
-    void avancar1Segundo()
+    // outros métodos
+    void definirHorario()
     {
-        segundos++;
+        cout << "Horas:";
+        cin >> horas;
+        cout << "Minutos: ";
+        cin >> minutos;
+        cout << "Segundos";
+        cin >> segundos;
+    }
 
-        if (segundos >= 60)
+    void avancar1seg()
+    {
+        if (segundos > 59)
         {
             segundos = 0;
             minutos++;
         }
-        if (minutos >= 60)
+        if (minutos > 59)
         {
             minutos = 0;
             horas++;
         }
-        if (horas >= 24)
+        if (horas > 23)
         {
             horas = 0;
         }
     }
 
-    void imprimir()
+    void imprimirHorario()
     {
-        cout << horas << ":" << minutos << ":" << segundos << endl;
+        cout << horas << ":" << minutos << ":" << segundos;
     }
 };
 
 int main()
 {
-    int n;
-    int horas, minutos, segundos;
+    int N;
 
-    cin >> n;
+    cin >> N;
 
     Relogio relogio;
+    int h, m, s;
 
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < N; i++)
     {
-        cin >> horas >> minutos >> segundos;
+        cin >> h >> m >> s;
 
-        relogio.setHoras(horas);
-        relogio.setMinutos(minutos);
-        relogio.setSegundos(segundos);
-        relogio.avancar1Segundo();
-        relogio.imprimir();
+        relogio.setHoras(h);
+        relogio.setMinutos(m);
+        relogio.setSegundos(s);
+
+        relogio.avancar1seg();
+
+        relogio.imprimirHorario();
     }
-}
+
+    return 0;
+} // end main
