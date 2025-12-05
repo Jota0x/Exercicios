@@ -4,60 +4,68 @@ using namespace std;
 class Carro
 {
 private:
-    int capacidade;
-    int consumo;
-    int atual;
-    int distancia;
+    float capacidade;
+    float consumo;
+    float combustivelAtual;
+    float distanciaPercorrida;
 
 public:
-    Carro() {};
-    Carro(int capacidade, int consumo, int atual, int distancia)
-        : capacidade(capacidade), consumo(consumo), atual(atual), distancia(distancia) {}
-
-    // set
-    void setCarro(int capacidade, int consumo, int atual, int distancia)
+    Carro(float combustivelInicial) : capacidade(50), consumo(15), combustivelAtual(0), distanciaPercorrida(0)
     {
-        this->capacidade = capacidade;
-        this->consumo = consumo;
-        this->atual = atual;
-        this->distancia = distancia;
+        if (combustivelInicial > capacidade)
+            combustivelAtual = capacidade;
+
+        else
+            combustivelAtual = combustivelInicial;
     }
 
-    // getters
-    int getCapacidade() { return this->capacidade; }
-    int getConsumo() { return this->consumo; }
-    int getAtual() { return this->atual; }
-    int getDistancia() { return this->distancia; }
-
-    // outros metodos
-    void abastecer(int combustivel)
+    void abastecer(float quantidade)
     {
-        atual += combustivel;
+        if (combustivelAtual + quantidade > capacidade)
+            combustivelAtual = capacidade;
+
+        else
+            combustivelAtual += quantidade;
     }
 
-    int retante(int atual)
+    void mover(float distancia)
     {
-        atual = atual
+        float litrosNecessarios = distancia / consumo;
+
+        if (combustivelAtual >= litrosNecessarios)
+        {
+            combustivelAtual -= litrosNecessarios;
+            distanciaPercorrida += distancia;
+        }
+        else
+        {
+            float distanciaPossivel = combustivelAtual * consumo;
+
+            distanciaPercorrida += distanciaPossivel;
+            combustivelAtual = 0.0;
+        }
     }
 
+    float getCombustivel() { return combustivelAtual; }
+    float getDistancia() { return distanciaPercorrida; }
 };
 
 int main()
 {
-    Carro c1(50, 15, 0, 0);
-    Carro c2(50, 15, 0, 0);
 
-    int comb1, comb2, d1, d2;
+    float comb1, comb2;
+    float dist1, dist2;
 
-    cin >> comb1;
-    cin >> comb2;
+    cin >> comb1 >> comb2 >> dist1 >> dist2;
 
-    cin >> d1;
-    cin >> d2;
+    Carro carro1(comb1);
+    Carro carro2(comb2);
 
-    c1.setCarro(50, 15, comb1, d1);
-    c1.setCarro(50, 15, comb2, d2);
+    carro1.mover(dist1);
+    carro2.mover(dist2);
 
+    cout << "Carro 1  Distancia: " << carro1.getDistancia() << " km | Combustivel: " << carro1.getCombustivel() << " litros" << endl;
+    cout << "Carro 2  Distancia: " << carro2.getDistancia() << " km | Combustivel: " << carro2.getCombustivel() << " litros" << endl;
 
-
-} // end main
+    return 0;
+}
