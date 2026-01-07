@@ -73,6 +73,10 @@ int main()
 {
     int anoAtual;
 
+    //cria objeto 
+    Carro c;
+    
+
     cin >> anoAtual;
 
     
