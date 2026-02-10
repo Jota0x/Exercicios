@@ -58,6 +58,7 @@ public:
         float desconto = 1;
         if (sexo == 'F')
             desconto = 0.05f;
+        return desconto;
     }
 };
 
@@ -71,10 +72,10 @@ private:
 
 public:
     // setters
-    void serProduto(int produto) { this->produto = produto; }
+    void setProduto(int produto) { this->produto = produto; }
     void setCliente(int cliente) { this->cliente = cliente; }
-    void getQuantidade(int quantidade) { this->quantidade = quantidade; }
-    void getValor(int valorTotal) { this->valorTotal = valorTotal; }
+    void setQuantidade(int quantidade) { this->quantidade = quantidade; }
+    void setValor(int valorTotal) { this->valorTotal = valorTotal; }
 
     // gettes
     int getProduto() { return this->produto; }
@@ -87,12 +88,15 @@ public:
     {
         return valor * quantidade;
     }
-
-    
-
 };
 
 int main()
 {
+    
 
+
+
+
+
+    return 0;
 } // end main
