@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class buscaInternet {
+public class teste2413 {
 
     public static void main(String[] args) {
 
