@@ -1,20 +1,22 @@
+
 import java.util.Scanner;
 
-public class test2374 {
+public class ex1001 {
 
     public static void main(String[] args) {
 
-        int diferenca;
-        int x = 0, y = 0;
+        int x, y;
+        int soma;
 
         Scanner dado = new Scanner(System.in);
 
         x = dado.nextInt();
         y = dado.nextInt();
 
-        diferenca = x - y;
+        soma = x + y;
 
-        System.out.println(diferenca);
+        System.out.println(" X = " + soma);
+        dado.close();
 
     }
 
