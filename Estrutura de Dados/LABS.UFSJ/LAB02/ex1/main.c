@@ -18,5 +18,7 @@ int main()
 
     imprimirInfo(conta);
 
+    free(conta);
+
     return 0;
 }
