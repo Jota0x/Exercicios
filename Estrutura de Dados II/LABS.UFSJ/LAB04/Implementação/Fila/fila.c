@@ -4,7 +4,7 @@ Fila* criarFila()
 {
     Fila *f = (Fila*)malloc(sizeof(Fila));
     if(f == NULL)
-        return -1;
+        printf("ERRO!");
     else
     {   
         //inicia fila 
@@ -30,7 +30,7 @@ void enfileirar(Fila *f,int n)
 
 void desinfileirar(Fila *f)
 {
-    if(!isEmpty)
+    if(!isEmpty(f))
     {
         printf("Removendo: %d da fila",f->itens[f->front]);
         f->front = (f->front + 1) % MAX;
@@ -43,7 +43,7 @@ void desinfileirar(Fila *f)
 
 bool isFull(Fila *f)
 {
-    if(f->quantidade == MAX - 1)
+    if(f->quantidade == MAX)
         return true;
     else
         return false;

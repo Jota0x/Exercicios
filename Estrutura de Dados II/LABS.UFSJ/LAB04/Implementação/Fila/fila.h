@@ -14,7 +14,7 @@ typedef struct
 }Fila;
 
 Fila* criarFila();
-void enfileirar(Fila *f);
+void enfileirar(Fila *f,int n);
 void desinfileirar(Fila *f);
 bool isEmpty(Fila *f);
 bool isFull(Fila *f);
