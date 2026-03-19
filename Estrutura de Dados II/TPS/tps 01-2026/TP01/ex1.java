@@ -2,12 +2,20 @@ import java.util.*;
 
 public class ex1{
     public static void main(String[] args){
-
+        
+    
         Scanner dado = new Scanner(System.in);
         
         String palavra;
 
         palavra = dado.nextLine();
+
+        while(!palavra.equals("FIM"))
+        {
+            ciframento(palavra);
+            
+            palavra = dado.nextLine();
+        }
 
     }
 
@@ -20,9 +28,13 @@ public class ex1{
         {
             char letra = palavra.charAt(i);
 
-            char novaLetra = (char)(letra + 3);
-
-            novaPalavra[i] = novaLetra;
+            if(letra >= 0 && letra <= 126)
+            {
+                char novaLetra = (char)(letra + 3);
+                novaPalavra[i] = novaLetra;
+            }
+            else    
+                novaPalavra[i] = letra;
 
         }
 
