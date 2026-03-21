@@ -3,26 +3,27 @@ import java.util.*;
 public class ex2{
     public static void main(String[] args){
 
-        Random random = new Random;
+        Random random = new Random();
         Scanner dado = new Scanner(System.in);
 
         String palavra;
-        char letra1 = random.nextInt(26);
-        char letra2 = random.nextInt(26);
+        char letra1 = (char) ('a' + random.nextInt(26));
+        char letra2 = (char) ('a' + random.nextInt(26));
 
         palavra = dado.nextLine();
 
-        alteracao(palavra);
+        alteracao(palavra, letra1, letra2);
 
-        System.out.println(alteracao);
+        System.out.println(palavra);
 
     }
 
-    public static void alteracao(String palavra,char letra1,char letra2){
+    public static String alteracao(String palavra,char letra1,char letra2){
 
-        for(int i = 0; i < palavra.length;i++)
+        for(int i = 0; i < palavra.length();i++)
             if(palavra.charAt(i) == letra1)
-                palavra.charAt(i) == letra2;
+                palavra = palavra.substring(0, i) + letra2 + palavra.substring(i + 1);
+        return palavra;
     }
 
 

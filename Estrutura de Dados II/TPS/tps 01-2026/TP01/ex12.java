@@ -1,26 +1,33 @@
 import java.util.*;
 
-public class ex12{
-    public static void main(String[] args){
+public class ex12 {
+    public static void main(String[] args) {
 
         Scanner dado = new Scanner(System.in);
 
-        int n;
+        String palavra;
 
-        n = dado.nextInt();
+        palavra = dado.nextLine();
 
-        System.out.println(soma(n));
+        while (!palavra.equals("FIM")) {
+
+            System.out.println(soma(palavra, palavra.length() - 1));
+
+            palavra = dado.nextLine();
+
+        }
 
     }
 
-    public static int soma(int n)
-    {
-        if(n == 0)
+    public static int soma(String palavra, int tam) {
+
+        if (tam < 0)
             return 0;
-        else
-            return n % 10 + soma(n/10);
+
+        int numero = (int) palavra.charAt(tam) - 48;
+
+        return numero + soma(palavra, tam - 1);
 
     }
-
 
 }

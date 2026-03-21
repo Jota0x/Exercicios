@@ -9,19 +9,19 @@ public class ex3{
 
         palavra = dado.nextLine();
 
-        if(isVogal == true)
+        if(isVogal(palavra) == true)
             System.out.print("SIM ");
         else
             System.out.print("NAO ");
-        if(isConsoante == true)
+        if(isConsoante(palavra) == true)
             System.out.print("SIM ");
         else
             System.out.print("NAO ");
-        if(isInteiro == true);
+        if(isInteiro(palavra) == true)
             System.out.print("SIM ");
         else
             System.out.print("NAO ");
-        if(isReal == true)
+        if(isReal(palavra) == true)
             System.out.print("SIM ");
         else
             System.out.print("NAO ");

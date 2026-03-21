@@ -1,36 +1,66 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
-char* alteracao(char *palavra,int tam);
+void inverte(char *palavra, int tam);
+bool fim(char *palavra);
 
 int main()
 {
+    // aloca memoria
+    char *palavra = (char *)malloc(50 * sizeof(char));
 
-    char *palavra = (char*)malloc(100 * sizeof(char));
+    fgets(palavra, 50, stdin);
 
-    fgets(palavra,100,stdin);
+    // limpa \n
+    palavra[strcspn(palavra, "\n")] = '\0';
 
-    char *resultado = alteracao(palavra,strlen(palavra));
+    // loop principal
+    // inverte enquanto != de FIM
+    while (!fim(palavra))
+    {
 
-    printf("%s\n",resultado);
+        int tam = strlen(palavra) - 1;
 
+        inverte(palavra, tam);
+
+        fgets(palavra, 50, stdin);
+
+        // limpa \n
+        palavra[strcspn(palavra, "\n")] = '\0';
+    }
+
+    // libera memoria
     free(palavra);
-    free(resultado);
 
     return 0;
 }
 
-char* alteracao(char *palavra,int tam)
-{   
-    int aux = 0;
-    char *newPalavra = (char*)malloc(strlen(palavra) * sizeof(char));
+void inverte(char *palavra, int tam)
+{
 
-    for(int i = tam - 1; i >= 0;i--)
+    // loop principal
+    // inverte string
+    for (int i = tam; i >= 0; i--)
+        printf("%c", palavra[i]);
+
+    printf("\n");
+}
+
+// verifica fim
+bool fim(char *palavra)
+{
+    char fim[] = "FIM";
+
+    if (strlen(fim) == strlen(palavra))
     {
-        newPalavra[aux] = palavra[i];
-        aux++;
+        for (int i = 0; i < strlen(palavra); i++)
+            if (palavra[i] != fim[i])
+                return false;
     }
+    else
+        return false;
 
-    return newPalavra;
+    return true;
 }
