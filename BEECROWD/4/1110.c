@@ -3,73 +3,94 @@
 
 typedef struct
 {
-    int topo;
-    int *tam;
+
     int *dados;
+    int tam;
+    int fim;
 
-} Pilha;
+} Fila;
 
-Pilha *newPilha(int tam)
-{
-    Pilha *p = (Pilha *)malloc(sizeof(Pilha));
-
-    if (p == NULL)
-        return NULL;
-
-    p->topo = -1;
-    p->tam = (int *)malloc(tam * sizeof(int));
-    p->dados[tam];
-
-    return p;
-}
-
-//preenche pilha 
-void preencher(Pilha *p)
-{
-    for(int i = 0; i < p->tam;i++)
-    {
-        p->dados[i] = p->tam;
-        p->tam--;
-    }
-}
-
-//remove topo
-void pop(Pilha *p)
-{   
-    printf("%d, ",p->dados[p->topo]);
-    p->dados[p->topo--];
-}
-
-//troca topo por base
-void troca(Pilha *p)
-{
-
-    int aux;
-
-    aux = p->dados[0];
-    p->dados[0] = p->dados[p->topo];
-    p->dados[p->topo] = aux;
-}
+Fila *newFila(int tam);
+void freeFila(Fila *f);
+void preenche(Fila *f);
+void removeInicio(Fila *f);
+void moverProFim(Fila *f);
 
 int main()
 {
     int N;
+    Fila *f;
 
-    while (scanf("%d", &N) != 0)
+    while (scanf("%d", &N) == 1 && N != 0)
     {
-        Pilha *p = newPilha(N);
 
-        while (p->topo > 0)
+        f = newFila(N);
+
+        preenche(f);
+
+        printf("Discarded cards: ");
+
+        while (N > 1)
         {
-            pop(p);
-
-
-            troca(p);
+            removeInicio(f);
+            moverProFim(f);
+            N--;
         }
 
-        printf("%d, ")
-
+        printf("\nRemaining card: %d\n", f->dados[0]);
     }
 
+    freeFila(f);
+
     return 0;
+}
+
+// cria Fila
+Fila *newFila(int tam)
+{
+    Fila *f = (Fila *)malloc(sizeof(Fila));
+
+    if (f == NULL)
+        return NULL;
+
+    f->fim = -1;
+    f->tam = tam;
+    f->dados = (int *)malloc(tam * sizeof(int));
+
+    return f;
+}
+
+void freeFila(Fila *f)
+{
+    free(f->dados);
+    free(f);
+}
+
+// preenche fila
+void preenche(Fila *f)
+{
+    f->fim = f->tam - 1;
+
+    for (int i = 0; i < f->tam; i++)
+        f->dados[i] = i + 1;
+}
+
+void removeInicio(Fila *f)
+{
+    printf("%d, ", f->dados[0]);
+
+    for (int i = 0; i < f->fim; i++)
+        f->dados[i] = f->dados[i + 1];
+
+    f->fim--;
+}
+
+void moverProFim(Fila *f)
+{
+    int aux = f->dados[0];
+
+    for (int i = 0; i < f->fim; i++)
+        f->dados[i] = f->dados[i + 1];
+
+    f->dados[f->fim] = aux;
 }
