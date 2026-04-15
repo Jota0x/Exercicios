@@ -12,8 +12,4 @@ public class Banco{
         contas.add(newConta);
 
     }
-
-
-
-
 }

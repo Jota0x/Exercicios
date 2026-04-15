@@ -28,6 +28,6 @@ public class Cliente{
 	String getEmail() {return this.email;}
 	String getSenha() {return this.senha;}
 
-
+  
 	
 }

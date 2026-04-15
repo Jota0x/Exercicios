@@ -47,7 +47,21 @@ public class Produto{
 	}
 
 	public static void 
-	
+
+
+  public static void atualizar(Produto p)
+  {
+    
+    for
+    
+
+
+
+
+  }
+
+
+
 
 
 

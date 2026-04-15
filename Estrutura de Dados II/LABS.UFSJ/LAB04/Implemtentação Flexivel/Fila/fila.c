@@ -58,19 +58,3 @@ bool isEmpty(Fila *f)
         return false;
         
 }
-
-
-
-
-
-
-
-
-
-bool isEmpty(Fila *f)
-{
-    if(f == NULL)
-        return true;
-    else
-        return false;
-}
