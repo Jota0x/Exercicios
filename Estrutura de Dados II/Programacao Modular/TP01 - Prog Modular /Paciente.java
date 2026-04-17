@@ -1,4 +1,4 @@
-
+import java.util.*;
 
 public class Paciente extends Entidade {
   
@@ -7,13 +7,14 @@ public class Paciente extends Entidade {
   private String cpf;
   
   //Construtores
-  public Pacinete() {}
-  public Paciente(int id, String nome, String telefone) {
+  public Paciente() {}
+  public Paciente(int id, String nome, String telefone,boolean persistido) {
 
-    super(id);
+    super(id,persistido);
     this.nome = nome;
-    this.email = telefone;
-    this.senha = cpf;;
+    this.telefone = telefone;
+    this.cpf = cpf;
+
 
   }
   
@@ -30,7 +31,7 @@ public class Paciente extends Entidade {
 
   //Salva Paciente
   @Override
-  boolean salvar() {
+  public boolean salvar() {
   
     if(!isPersistido())
     {
@@ -45,12 +46,12 @@ public class Paciente extends Entidade {
 
   //Atualiza dados de Paciente 
   @Override
-  boolean atualizar()
+  public boolean atualizar()
   {
-    if(this.persistido)
+    if(isPersistido())
     {
 
-      System.out.println("Atualizando dados de ID: " + this.id);
+      System.out.println("Atualizando dados de ID: " + getId());
       return true;
   
     }
@@ -60,12 +61,12 @@ public class Paciente extends Entidade {
 
   //Apaga dados de Paciente 
   @Override
-  boolean apagar(int id)
+  public boolean apagar(int id)
   {
-    if(this.persistido)
+    if(isPersistido())
     {
-      System.out.println("Apagando dados de ID: " + this.id);
-      this.persistido = false;
+      System.out.println("Apagando dados de ID: " + getId());
+      setPersistido(false);;
       
       return true;
     }
@@ -74,9 +75,9 @@ public class Paciente extends Entidade {
   }
 
   @Override
-  boolean carregar(int id) {
+  public boolean carregar(int id) {
 
-    if(this.persistido)
+    if(isPersistido())
     {
       return true;
     }
@@ -88,14 +89,8 @@ public class Paciente extends Entidade {
   public List<Entidade> carregarTodos() {
 
     //Implementar logica
+    return new ArrayList<Entidade>();
 
   }
-
-
-  
-
-  
-
-
 
 }

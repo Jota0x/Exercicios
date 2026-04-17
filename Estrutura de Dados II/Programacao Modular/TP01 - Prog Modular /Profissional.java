@@ -1,5 +1,4 @@
-
-
+import java.util.*;
 
 public class Profissional extends Entidade {
 
@@ -22,7 +21,7 @@ public Profissional(int id, String nome, String telefone, String cpf, boolean pe
 //setters
 public void setNome(String nome) {this.nome = nome;}
 public void setTelefone(String telefone) {this.telefone = telefone;}
-public void setCpf(String cpf) {this.cpf = cpf}
+public void setCpf(String cpf) {this.cpf = cpf;}
 
 //getters
 public String getNome() {return this.nome;}
@@ -31,13 +30,13 @@ public String getCpf() {return this.cpf;}
 
 //Salva Funcionario
 @Override
-public static boolean salvar() {
+public boolean salvar() {
   
     if(!isPersistido()){
 
-      System.out.println("Profissional salvo! ID: " + this.id);
+      System.out.println("Profissional salvo! ID: " + getId());
 
-      return super().salvar();
+      return salvar();
     }
     else 
       return false;
@@ -46,11 +45,11 @@ public static boolean salvar() {
 
 //Atualiza Funcionario
 @Override
-public static boolean atualizar {
+public boolean atualizar() {
   
-    if(this.persistido) {
+    if(isPersistido()) {
 
-      System.out.println("Dados atualizados ID: " + this.id);
+      System.out.println("Dados atualizados ID: " + getId());
 
       return true;
 
@@ -62,12 +61,13 @@ public static boolean atualizar {
 
 //Apaga Funcionario
 @Override
-public static boolean apagar() {
+public boolean apagar(int id) {
 
-    if(this.persistido) {
+    if(isPersistido()) {
       
-      System.out.println("Profissional apagado: " + this.id);
-      this.persistido = false;
+      System.out.println("Profissional apagado: " + getId());
+      setPersistido(false);
+      return true;
 
     }
     else 
@@ -75,9 +75,9 @@ public static boolean apagar() {
 }
 
 @Override
-public static boolean carregar() {
+public boolean carregar(int id) {
   
-  if(this.persistido) {
+  if(isPersistido()) {
 
     //implementar logica
 
@@ -92,5 +92,7 @@ public static boolean carregar() {
 public List<Entidade> carregarTodos() {
 
   //Implementar logica depois
+  return new ArrayList<>();
 
+}
 }

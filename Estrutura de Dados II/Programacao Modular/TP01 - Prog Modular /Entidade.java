@@ -1,6 +1,6 @@
+import java.util.*;
 
-
-public class Entidade {
+public abstract class Entidade {
   
   private int id;
   private boolean persistido;
@@ -21,9 +21,10 @@ public class Entidade {
   
   //setters
   public void setId(int id) {this.id = id;}
+  public void setPersistido(boolean persistido) {this.persistido = persistido;}
 
   //getters
-  public int getid() {return this.id;}
+  public int getId() {return this.id;}
   public boolean isPersistido() {return this.persistido;} 
 
   //metodo para salvar
