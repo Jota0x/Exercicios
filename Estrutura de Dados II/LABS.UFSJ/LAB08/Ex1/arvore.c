@@ -75,10 +75,9 @@ remover_elemento(No *raiz, int chave)
       return tmp;
     }
     // Trata No direito vazio
-    else if
+    else if (raiz->direita == NULL)
     {
-      (raiz->direita == NULL)
-          No *tmp = raiz->esquerda;
+      No *tmp = raiz->esquerda;
       free(raiz);
       return tmp;
     }
@@ -86,7 +85,7 @@ remover_elemento(No *raiz, int chave)
     {
       No *tmp = raiz->direita;
       raiz->dado = tmp->dado;
-      raiz->direita = remover_elemento(raiz->direita, tmp->data);
+      raiz->direita = remover_elemento(raiz->direita, tmp->dado);
     }
   }
 }
