@@ -1,43 +1,34 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 
-bool isCorrect(char *string);
+int contar_parenteses(char *string);
 
 int main()
 {
-    char string[1000];
+    char *palavra;
 
-    while (scanf("%s", string) != EOF)
-    {
+    fgets(palavra, 1000, stdin);
 
-        if (isCorrect(string))
-            printf("correct\n");
-        else
-            printf("incorrect\n");
-    }
+    if (contar_parenteses(palavra) == 0)
+        printf("correct\n");
+    else
+        printf("incorrect\n");
 
     return 0;
 }
 
-bool isCorrect(char *string)
+int contar_parenteses(char *string)
 {
-    int aux = 0;
+    int contador = 0;
+    int tamanho = strlen(string) - 1;
 
-    for (int i = 0; i < strlen(string); i++)
+    for (int i = 0; i < tamanho; i++)
     {
-        if (string[i] == '(')
-            aux++;
-        else if (string[i] == ')')
-            aux--;
-
-        if (aux < 0)
-            return false;
+        if (string[i] == ')')
+            contador++;
+        else if (string[i] == '(')
+            contador--;
     }
 
-    if (aux == 0)
-        return true;
-    else
-        return false;
+    return contador;
 }
